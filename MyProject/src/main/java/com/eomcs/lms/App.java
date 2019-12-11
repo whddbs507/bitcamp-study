@@ -3,15 +3,36 @@
  */
 package com.eomcs.lms;
 
+import java.util.Scanner;
+
 public class App {
     
   public static void main(String[] args) {
-    System.out.println("번호: 1");
-    System.out.println("수업명: 자바 프로젝트 실습");
-    System.out.println("설명: 자바 프로젝트를 통한 자바 언어 활용법 익히기");
-    System.out.println("시작일: 2019-12-10");
-    System.out.println("종료일: 2020-05-28");
-    System.out.println("총수업시간: 1000 시간");
-    System.out.println("일수업시간: 8 시간");
+    
+    Scanner keyboard = new Scanner(System.in);
+    
+    System.out.println("번호를 입력하세요.");
+    String no = keyboard.nextLine();
+    System.out.println("수업명을 입력하세요.");
+    String name = keyboard.nextLine();
+    System.out.println("설명을 입력하세요.");
+    String description = keyboard.nextLine();
+    System.out.println("시작일을 입력하세요.");
+    String startDate = keyboard.nextLine();
+    System.out.println("종료일을 입력하세요.");
+    String endDate = keyboard.nextLine();
+    System.out.println("총수업시간을 입력하세요.");
+    String totalTime = keyboard.nextLine();
+    System.out.println("일수업시간을 입력하세요.");
+    String dayTime = keyboard.nextLine();
+    
+    System.out.printf("번호: %s\n", no);
+    System.out.printf("수업명: %s\n", name);
+    System.out.printf("설명: %s\n", description);
+    System.out.printf("시작일: %s\t  종료일: %s\n", startDate, endDate);
+    System.out.printf("총수업시간: %s\n", totalTime);
+    System.out.printf("일수업시간: %s\n", dayTime);
+    
+    keyboard.close();
   }
 }
