@@ -18,13 +18,14 @@ public class Exam16 {
 
     char c;  // 2바이트
 
-    
+    // 위 8개 이외에는 무조건 레퍼런스다!!!    
     // => reference(레퍼런스) : 다른 메모리의 주소를 저장하는 변수
 
     String str;
     Thread t;
     java.sql.Date date;
     java.net.Socket socket;
+    int[] arr;
 
   }
 }

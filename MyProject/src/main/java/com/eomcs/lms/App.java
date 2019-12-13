@@ -4,6 +4,7 @@
 package com.eomcs.lms;
 
 import java.util.Scanner;
+import java.sql.Date;
 
 public class App {
     
@@ -11,27 +12,34 @@ public class App {
     
     Scanner keyboard = new Scanner(System.in);
     
+    
+    
     System.out.println("번호를 입력하세요.");
-    String no = keyboard.nextLine();
+    int no = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("수업명을 입력하세요.");
     String name = keyboard.nextLine();
     System.out.println("설명을 입력하세요.");
     String description = keyboard.nextLine();
     System.out.println("시작일을 입력하세요.");
-    String startDate = keyboard.nextLine();
+    Date startDate = Date.valueOf(keyboard.next());
     System.out.println("종료일을 입력하세요.");
-    String endDate = keyboard.nextLine();
+    Date endDate = Date.valueOf(keyboard.next());
     System.out.println("총수업시간을 입력하세요.");
-    String totalTime = keyboard.nextLine();
+    int totalTime = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("일수업시간을 입력하세요.");
-    String dayTime = keyboard.nextLine();
+    int dayTime = keyboard.nextInt();
+    keyboard.nextLine();
     
-    System.out.printf("번호: %s\n", no);
+    keyboard.close();
+    
+    System.out.printf("번호: %d\n", no);
     System.out.printf("수업명: %s\n", name);
     System.out.printf("설명: %s\n", description);
     System.out.printf("시작일: %s\t  종료일: %s\n", startDate, endDate);
-    System.out.printf("총수업시간: %s\n", totalTime);
-    System.out.printf("일수업시간: %s\n", dayTime);
+    System.out.printf("총수업시간: %d\n시간", totalTime);
+    System.out.printf("일수업시간: %d\n시간", dayTime);
     
     keyboard.close();
   }

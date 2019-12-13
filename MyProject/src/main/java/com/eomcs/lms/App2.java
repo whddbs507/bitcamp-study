@@ -10,7 +10,8 @@ public class App2 {
     Scanner keyboard = new Scanner(System.in);
     
     System.out.printf("번호 : ");
-    String no = keyboard.nextLine();
+    int no = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.printf("이름 : ");
     String name = keyboard.nextLine();
     System.out.printf("이메일 : ");
@@ -26,7 +27,7 @@ public class App2 {
     Date joinDate = new Date(System.currentTimeMillis());
     
     System.out.printf("");
-    System.out.printf("번호: %s\n", no);
+    System.out.printf("번호: %d\n", no);
     System.out.printf("이름: %s\n", name);
     System.out.printf("이메일: %s\n", email);
     System.out.printf("암호: %s\n", password);
