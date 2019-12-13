@@ -1,40 +1,56 @@
 package com.eomcs.lms;
 
 import java.util.Scanner;
-import java.sql.Date;
 
 public class App2 {
   
+  final static int size = 5000;
+  static int count = 1;
+  static int[] no = new int[size];
+  static String[] id = new String[size];
+  static String[] password = new String[size];
+  static String[] passwordRe = new String[size];
+  static String[] name = new String[size];
+  static String[] email = new String[size];
+  
   public static void main(String[] args) {
+    inputRegister();
+    printRegister();
+  }
+  
+  static void inputRegister() {
+    Scanner keyScan = new Scanner(System.in);
     
-    Scanner keyboard = new Scanner(System.in);
-    
-    System.out.printf("번호 : ");
-    int no = keyboard.nextInt();
-    keyboard.nextLine();
-    System.out.printf("이름 : ");
-    String name = keyboard.nextLine();
-    System.out.printf("이메일 : ");
-    String email = keyboard.nextLine();
-    System.out.printf("암호 : ");
-    String password = keyboard.nextLine();
-    System.out.printf("사진 : ");
-    String picture = keyboard.nextLine();
-    System.out.printf("전화 : ");
-    String tel = keyboard.nextLine();
-    keyboard.close();
-    
-    Date joinDate = new Date(System.currentTimeMillis());
-    
-    System.out.printf("");
-    System.out.printf("번호: %d\n", no);
-    System.out.printf("이름: %s\n", name);
-    System.out.printf("이메일: %s\n", email);
-    System.out.printf("암호: %s\n", password);
-    System.out.printf("사진: %s\n", picture);
-    System.out.printf("전화: %s\n", tel);
-    System.out.printf("가입일: %s\n", joinDate);
-    
-    
+    for (int i = 0; i < count; i++) {
+      no[i] = i + 1;
+      System.out.println("아이디를 입력해주세요.");
+      id[i] = keyScan.nextLine();
+      System.out.println("비밀번호를 입력해주세요.");
+      password[i] = keyScan.nextLine();
+      System.out.println("비밀번호를 다시 입력해주세요.");
+      passwordRe[i] = keyScan.nextLine();
+      if (!passwordRe[i].equals(password[i])) {
+        System.out.println("틀렸습니다. 다시 입력하세요");
+        passwordRe[i] = keyScan.nextLine();
+      }
+      System.out.println("이름을 입력해주세요.");
+      name[i] = keyScan.nextLine();
+      System.out.println("이메일을 입력해주세요.");
+      email[i] = keyScan.nextLine();
+      System.out.println("계속 입력하시겠습니까? (Y/N)");
+      String response = keyScan.nextLine();
+      if (!response.equalsIgnoreCase("Y")) {
+        break;
+      }
+      count++;
+    }
+  }
+  
+  static void printRegister() {
+
+    for (int i = 0; i < count; i++) {
+    System.out.printf("%-15d\t %-15s\t %-25s\t %-25s\t %-15s\t %-15s\n",
+        no[i], id[i], password[i], passwordRe[i], name[i], email[i]);
+    }
   }
 }

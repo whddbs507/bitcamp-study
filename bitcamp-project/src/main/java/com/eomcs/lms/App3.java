@@ -15,10 +15,7 @@ public class App3 {
 
   static final int size = 522;
 
-  static int[] no = new int[size];
-  static String[] title = new String[size];
-  static Date[] date = new Date[size];
-  static int[] viewCount = new int[size];
+  static Board[] boards = new Board[size];
   static int count = 0;  
   static Scanner keyboard = new Scanner(System.in);
   static int i = 0;
@@ -35,18 +32,23 @@ public class App3 {
 
   static void inputBoards() {
     String response;
-
+    
     for (int i = 0; i < size; i++) {
+      Board b = new Board();
       
       System.out.print("번호? ");
-      no[i] = keyboard.nextInt();
+      b.no = keyboard.nextInt();
       keyboard.nextLine();        // 줄바꿈 기호 제거용
       
-      date[i] = new Date(System.currentTimeMillis());
-      viewCount[i] = 0;
-      count++;
+      b.date = new Date(System.currentTimeMillis());
+      b.viewCount = 0;
+      
       System.out.print("내용? ");
-      title[i] = keyboard.nextLine();
+      b.title = keyboard.nextLine();
+      
+      boards[i] = b;
+      
+      count++;
       
       System.out.print("계속 입력하시겠습니까?(Y/N) ");
       response = keyboard.nextLine();
@@ -62,7 +64,8 @@ public class App3 {
     System.out.println("");
 
     for (i=0; i < count; i++) {
-     System.out.printf("%d, %s, %s, %d\n", no[i], title[i], date[i], viewCount[i]);    
+     Board b = boards[i];
+     System.out.printf("%d, %s, %s, %d\n", b.no, b.title, b.date, b.viewCount);    
     }
   }
 
