@@ -27,7 +27,7 @@ public class Test02 {
       System.out.println("잘못 선택했습니다!!");
       return;
     }
-    
+  
 
     int inputComputer = (int)((Math.random() * 10) % 3 + 1);
     if (inputComputer == 1) {
@@ -51,3 +51,16 @@ public class Test02 {
     }
   } 
 }
+
+
+// 과제 1 : 가위,바위,보 게임 애플리케이션을 작성하라.
+// - 실행1
+// 가위,바위,보? 보
+// 컴퓨터: 가위  (랜덤 값이 출력된다. 힌트: Math.random())
+// => 졌습니다.
+//
+// - 실행2
+// 가위,바위,보? 바위
+// 컴퓨터: 가위
+// => 이겼습니다.
+//

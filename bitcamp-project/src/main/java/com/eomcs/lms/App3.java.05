@@ -13,57 +13,55 @@ import java.sql.Date;
 
 public class App3 {
 
-  static final int size = 522;
+  static final int size = 5735;
 
   static int[] no = new int[size];
   static String[] title = new String[size];
   static Date[] date = new Date[size];
   static int[] viewCount = new int[size];
   static int count = 0;  
-  static Scanner keyboard = new Scanner(System.in);
-  static int i = 0;
 
-  
   public static void main(String[] args) {
+
+    String response;
 
     inputBoards();
 
     printBoards();
-    
   }
 
 
   static void inputBoards() {
-    String response;
+
+    Scanner keyboard = new Scanner(System.in);
 
     for (int i = 0; i < size; i++) {
-      
       System.out.print("번호? ");
       no[i] = keyboard.nextInt();
       keyboard.nextLine();        // 줄바꿈 기호 제거용
-      
-      date[i] = new Date(System.currentTimeMillis());
-      viewCount[i] = 0;
-      count++;
-      System.out.print("내용? ");
-      title[i] = keyboard.nextLine();
-      
-      System.out.print("계속 입력하시겠습니까?(Y/N) ");
-      response = keyboard.nextLine();
-      if (!response.equalsIgnoreCase("Y")) {
-        break;      // 반복문을 즉시 멈춰라!
-      }
+
+
     }
-    
   }
-  
   static void printBoards() {
-    
-    System.out.println("");
+    title[i] = keyboard.nextLine();
 
-    for (i=0; i < count; i++) {
-     System.out.printf("%d, %s, %s, %d\n", no[i], title[i], date[i], viewCount[i]);    
+    date[i] = new Date(System.currentTimeMillis());
+    viewCount[i] = 0;
+
+    count++;
+    System.out.print("내용? ");
+
+    System.out.print("계속 입력하시겠습니까?(Y/N) ");
+    response = keyboard.nextLine();
+    if (!response.equalsIgnoreCase("Y")) {
+      break;      // 반복문을 즉시 멈춰라!
+    }
+
+    Date today = new Date(System.currentTimeMillis());
+
+    System.out.println("");
+    for (int i = 0; i < count; i++) {
+      System.out.printf("%d, %s, %s, %d\n", no[i], title[i], date[i], viewCount[i]);    
     }
   }
-
-}
