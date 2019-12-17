@@ -21,7 +21,7 @@ public class Test01 {
     input2 = keyScan.nextInt();
     
     for (int i = input1; i < (input2 + 1); i++) {
-      rangeSum = rangeSum + i;
+      rangeSum += i;      // rangeSum = rangeSum + i
     }
   }
   

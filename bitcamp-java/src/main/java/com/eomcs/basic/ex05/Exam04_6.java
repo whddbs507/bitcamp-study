@@ -25,7 +25,5 @@ public class Exam04_6 {
         if ((lang & 2) > 0) System.out.print("html ");
         if ((lang & 1) > 0) System.out.print("css ");
         System.out.println(); // 줄바꿈
-
-
     }
 }
