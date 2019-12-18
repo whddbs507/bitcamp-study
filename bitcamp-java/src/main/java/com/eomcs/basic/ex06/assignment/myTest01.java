@@ -10,15 +10,17 @@ public class myTest01 {
     outputBase();
   }
   
-  static void inputBase() {
+  static void inputBase() {             // void : return 반환 안할 때 (예를 들어, int일 때는 return 반환 값이 int)
     Scanner keyScan = new Scanner(System.in);
     
     System.out.println("밑변 개수를 설정해주세요!");
     base = keyScan.nextInt();
   }
+  
   static void outputBase() {
     int i = 1; 
     int j = 1;
+    
     
     while (i <= base) {      
       while (j <= i) {

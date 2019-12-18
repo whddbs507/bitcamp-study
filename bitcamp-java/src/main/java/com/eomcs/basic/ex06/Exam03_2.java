@@ -29,7 +29,7 @@ public class Exam03_2 {
         }
         System.out.printf("count=%d, sum=%d\n", count, sum);
 
-        System.out.println("------------------------");
+        System.out.println("----------xxddfd--------------");
 
         // continue 사용 후
         // 1부터 100까지의 짝수의 합은?
@@ -43,7 +43,7 @@ public class Exam03_2 {
         }
         System.out.printf("count=%d, sum=%d\n", count, sum);
 
-        System.out.println("------------------------");
+        System.out.println("-------vvvvvvvv-----------------");
 
         // break 사용 전 
         // 0부터 99까지의 카운트를 하는데 단 합은 50까지만 계산한다.

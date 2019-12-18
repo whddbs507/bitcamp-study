@@ -23,7 +23,7 @@ public class Exam04_4 {
 
         // for 문에 컬렉션도 적용할 수 있다.
         // for (변수 선언 : 컬렉션객체) 문장;
-        for (Object value : list) 
+        for (Object value : list)       // Object는 어떠한 변수값도 다 받을수 있는 자료형
             System.out.println(value);
     }
 }
