@@ -12,7 +12,7 @@ public class Test04 {
     System.out.print("입력?  ");
     int n = keyScan.nextInt();
     int result = factorial(n);
-    System.out.println(result);
+    System.out.printf("%d! : %d", n, result);
   }
   
   static int factorial(int n) {

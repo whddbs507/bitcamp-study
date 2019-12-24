@@ -1,30 +1,35 @@
 package com.eomcs.lms;
 
+import java.sql.Date;
 import java.util.Scanner;
 import com.eomcs.lms.handler.BoardHandler;
+import com.eomcs.lms.handler.BoardHandler2;
+import com.eomcs.lms.handler.BoardHandler3;
+import com.eomcs.lms.handler.BoardHandler4;
+import com.eomcs.lms.handler.BoardHandler5;
+import com.eomcs.lms.handler.BoardHandler6;
 import com.eomcs.lms.handler.LessonHandler;
 import com.eomcs.lms.handler.MemberHandler;
 
 public class App {
 
-  static Scanner keyboard = new Scanner(System.in);  
+  static Scanner keyboard = new Scanner(System.in);
 
   public static void main(String[] args) {
 
     // LessonHandler의 메서드를 사용하기 전에 그 메서드가 필요로 하는 키보드 객체를 설정해줘야한다.
     LessonHandler.keyboard = keyboard;
+    
     // MemberHandler의 메서드를 사용하기 전에 그 메서드가 필요로 하는 키보드 객체를 설정해줘야한다.
     MemberHandler.keyboard = keyboard;
     
     // BoardHandler의 메서드를 사용하기 전에 그 메서드가 필요로 하는 키보드 객체를 설정해줘야한다.
     BoardHandler.keyboard = keyboard;
-    // BoardHandler의 메서드가 사용할 메모리만 게시판마다 따로 생성한다.
-    BoardHandler 게시판1 = new BoardHandler();
-    BoardHandler 게시판2 = new BoardHandler();
-    BoardHandler 게시판3 = new BoardHandler();
-    BoardHandler 게시판4 = new BoardHandler();
-    BoardHandler 게시판5 = new BoardHandler();
-    BoardHandler 게시판6 = new BoardHandler();
+    BoardHandler2.keyboard = keyboard;
+    BoardHandler3.keyboard = keyboard;
+    BoardHandler4.keyboard = keyboard;
+    BoardHandler5.keyboard = keyboard;
+    BoardHandler6.keyboard = keyboard;
     
     String command;
     
@@ -50,58 +55,58 @@ public class App {
           MemberHandler.listMember();
           break;
         case "/board/add":
-          BoardHandler.addBoard(게시판1);
+          BoardHandler.addBoard();
           break;
         case "/board/list":
-          BoardHandler.listBoard(게시판1);
+          BoardHandler.listBoard();
           break;
         case "/board/detail":
-          BoardHandler.detailBoard(게시판1);
+          BoardHandler.detailBoard();
           break;
         case "/board2/add":
-          BoardHandler.addBoard(게시판2);
+          BoardHandler2.addBoard();
           break;
         case "/board2/list":
-          BoardHandler.listBoard(게시판2);
+          BoardHandler2.listBoard();
           break;
         case "/board2/detail":
-          BoardHandler.detailBoard(게시판2);
+          BoardHandler2.detailBoard();
           break;
         case "/board3/add":
-          BoardHandler.addBoard(게시판3);
+          BoardHandler3.addBoard();
           break;
         case "/board3/list":
-          BoardHandler.listBoard(게시판3);
+          BoardHandler3.listBoard();
           break;
         case "/board3/detail":
-          BoardHandler.detailBoard(게시판3);
+          BoardHandler3.detailBoard();
           break;
         case "/board4/add":
-          BoardHandler.addBoard(게시판4);
+          BoardHandler4.addBoard();
           break;
         case "/board4/list":
-          BoardHandler.listBoard(게시판4);
+          BoardHandler4.listBoard();
           break;
         case "/board4/detail":
-          BoardHandler.detailBoard(게시판4);
+          BoardHandler4.detailBoard();
           break;
         case "/board5/add":
-          BoardHandler.addBoard(게시판5);
+          BoardHandler5.addBoard();
           break;
         case "/board5/list":
-          BoardHandler.listBoard(게시판5);
+          BoardHandler5.listBoard();
           break;
         case "/board5/detail":
-          BoardHandler.detailBoard(게시판5);
+          BoardHandler5.detailBoard();
           break;
         case "/board6/add":
-          BoardHandler.addBoard(게시판6);
+          BoardHandler6.addBoard();
           break;
         case "/board6/list":
-          BoardHandler.listBoard(게시판6);
+          BoardHandler6.listBoard();
           break;
         case "/board6/detail":
-          BoardHandler.detailBoard(게시판6);
+          BoardHandler6.detailBoard();
           break;
         default:
           if (!command.equalsIgnoreCase("quit")) {
@@ -114,6 +119,7 @@ public class App {
 
     keyboard.close();
   }
+
 
 }
 

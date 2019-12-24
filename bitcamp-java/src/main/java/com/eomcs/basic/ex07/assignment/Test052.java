@@ -10,7 +10,7 @@ import java.util.Scanner;
 // ****
 // *****
 //
-public class Test051 {
+public class Test052 {
 
   public static void main(String[] args) {
     // 사용자로부터 밑변의 길이를 입력 받는다.
@@ -20,21 +20,20 @@ public class Test051 {
     // 직삼각형을 출력한다.
     int base = keyScan.nextInt();
     keyScan.close();
-    int cc = base;
-    printTriangle(base, cc);
+    printTriangle(base);
   }
   
-  static void printTriangle(int base, int cc) {
-    for (int i = cc; i >= base; i--) {
+  static void printTriangle(int base) {
+        
+    if (base == 0) {
+      return;
+    } else {
+      printTriangle(base-1);
+    }
+    for (int i = 0; i < base; i++) {
       System.out.print("*");
     }
     System.out.println();
-        
-    if (base == 1) {
-      return;
-    } else {
-      printTriangle(base-1, cc);
-    }
   }
 }
 

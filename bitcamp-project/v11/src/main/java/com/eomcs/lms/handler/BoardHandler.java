@@ -1,4 +1,4 @@
-package com.eomcs.lms;
+package com.eomcs.lms.handler;
 
 import java.sql.Date;
 import java.util.Scanner;
@@ -11,12 +11,12 @@ public class BoardHandler {
     int viewCount;
   }
   
-  static Scanner keyboard = new Scanner(System.in);
+  public static Scanner keyboard = new Scanner(System.in);
   static final int BOARD_SIZE = 100;
   static Board[] boards = new Board[BOARD_SIZE];
   static int boardCount = 0;
   
-  static void listBoard() {
+  public static void listBoard() {
     for (int i = 0; i < boardCount; i++) {
       Board b = boards[i];
       System.out.printf("%d, %s, %s, %d\n", 
@@ -24,7 +24,7 @@ public class BoardHandler {
     }
   }
 
-  static void addBoard() {
+  public static void addBoard() {
     Board board = new Board();
 
     System.out.print("번호? ");
