@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.Scanner;
 
 public class MemberHandler {
+  
   static class Member {
     int no;
     String name;
@@ -17,7 +18,7 @@ public class MemberHandler {
   static final int MEMBER_SIZE = 100;
   static Member[] members = new Member[MEMBER_SIZE];
   static int memberCount = 0;
-  public static Scanner keyboard = new Scanner(System.in);
+  public static Scanner keyboard;
   
   public static void listMember() {
     for (int i = 0; i < memberCount; i++) {
@@ -50,7 +51,7 @@ public class MemberHandler {
     member.tel = keyboard.nextLine();
 
     member.registeredDate = new Date(System.currentTimeMillis());
-
+    
     members[memberCount++] = member;
     System.out.println("저장하였습니다.");
   }
