@@ -2,36 +2,46 @@ package com.eomcs.oop.ex01.assignment;
 
 import java.util.Scanner;
 
-public class Test01{
+public class Test01 {
   public static void main(String[] args) {
+
+    class Score {
+      String name;
+      int kor;
+      int eng;
+      int math;
+    }
+
     Scanner keyScan = new Scanner(System.in);
-    final int SIZE = 100;
-    String[] name = new String[SIZE];
-    int[] kor = new int[SIZE];
-    int[] eng = new int[SIZE];
-    int[] math = new int[SIZE];
-    String response;
-    int count = 1;
-    int j = 0;
-    System.out.println("이름, 국어, 영어, 수학을 입력하세요");
-    do {
-        System.out.print("입력: ");
-        name[j] = keyScan.next();
-        kor[j] = keyScan.nextInt();
-        eng[j] = keyScan.nextInt();
-        math[j] = keyScan.nextInt();
-        keyScan.nextLine();
-        System.out.println("더 입력하실래요? (Y/n)");
-      count++; 
-      j++;
-      response = keyScan.nextLine();
-    }while(response.equalsIgnoreCase("Y"));
+
+    Score[] arr = new Score[3];
+
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print("입력: ");
+      Score s = new Score();
+
+      s.name = keyScan.next();
+      s.kor = keyScan.nextInt();
+      s.eng = keyScan.nextInt();
+      s.math = keyScan.nextInt();
+
+      arr[i] = s;
+    }
+
+    keyScan.close();
+
+    System.out.println("-------------------");
     
-
-
-    for (int i = 0; i < count - 1; i++) {
-      System.out.printf("%s, %d, %d, %d, %d, %d\n"
-          , name[i], kor[i], eng[i], math[i], kor[i] + eng[i] + math[i], (kor[i] + eng[i] + math[i])/3);
+    for (int i = 0; i < arr.length; i++) {
+      Score s = arr[i];
+      int sum = s.kor + s.eng + s.math;
+      float aver = sum / 3f;
+      System.out.printf("%s %d %d %d %d %.1f\n", 
+          s.name, s.kor, s.eng, s.math, sum, aver);
     }
   }
 }
+
+
+
+
