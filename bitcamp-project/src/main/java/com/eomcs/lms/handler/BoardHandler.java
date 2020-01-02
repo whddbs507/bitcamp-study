@@ -6,63 +6,72 @@ import com.eomcs.lms.domain.Board;
 
 public class BoardHandler {
   
-  public static Scanner keyboard = new Scanner(System.in);
-  static final int BOARD_SIZE = 100;
-  static Board[] boards = new Board[BOARD_SIZE];
-  static int boardCount = 0;
+  BoardList boardList;
   
-  public static void listBoard(BoardHandler boardHandler) { // << BoardHandler : 클래스, boardHandler : 인스턴스
-    for (int i = 0; i < boardCount; i++) {
-      Board b = boardHandler.boards[i];
+  Scanner input;
+  
+  
+  public BoardHandler(Scanner input) {
+    this.input = input;
+    this.boardList = new BoardList();
+  }
+  
+  public BoardHandler(Scanner input, int capacity) {
+    this.input = input;
+    this.boardList = new BoardList(capacity);
+  }
+  
+  public void listBoard() {
+    Board[] boards = this.boardList.toArray();
+    for (Object obj : arr) {
       System.out.printf("%d, %s, %s, %d\n", 
-          b.no, b.title, b.date, b.viewCount);
+          b.getNo(), b.getTitle(), b.getDate(), b.getViewCount());
     }
   }
 
-  public static void addBoard(BoardHandler boardHandler) {
+  public void addBoard() {
     Board board = new Board();
-
-    System.out.print("번호? ");
-    board.no = keyboard.nextInt();
-    keyboard.nextLine(); // 줄바꿈 기호 제거용
     
+    System.out.print("번호? ");
+    board.setNo(input.nextInt());
+    input.nextLine(); // 줄바꿈 기호 제거용
 
     System.out.print("내용? ");
-    board.title = keyboard.nextLine();
+    board.setTitle(input.nextLine());
 
-    board.date = new Date(System.currentTimeMillis());
-    board.viewCount = 0;
-
-    boardHandler.boards[boardHandler.boardCount++] = board;
+    board.setDate(new Date(System.currentTimeMillis()));
+    board.setViewCount(0);
+    
+    this.boardList.add(board);
+    
     System.out.println("저장하였습니다.");
   }
   
-  public static void detailBoard(BoardHandler boardHandler) {
-    System.out.print("게시물 번호?");
-    int no = keyboard.nextInt();
-    keyboard.nextLine();    // 숫자 뒤의 남은 공백 제거
+  public void detailBoard() {
+    System.out.print("게시물 번호? ");
+    int no = input.nextInt();
+    input.nextLine(); // 숫자 뒤의 남은 공백 제거
     
-    Board board = null;
-    for (int i = 0; i < boardHandler.boardCount; i++) {
-      if (boardHandler.boards[i].no == no) {
-        board = boardHandler.boards[i];
-        break;
-      }
-    }
+    Board board = this.boardList.get(no);
+    
     if (board == null) {
-      System.out.println("게시물 번호가 유효하지 않습니다");
-      return;
-    }
-    
-    if (no < 0 || no > boardCount) {
       System.out.println("게시물 번호가 유효하지 않습니다.");
       return;
-    } 
+    }
     
-    System.out.printf("번호: %d\n", board.no);
-    System.out.printf("제목: %s\n", board.title);
-    System.out.printf("등록일: %s\n", board.date);
-    System.out.printf("조회수: %d\n", board.viewCount);
-    
+    System.out.printf("번호: %d\n", board.getNo());
+    System.out.printf("제목: %s\n", board.getTitle());
+    System.out.printf("등록일: %s\n", board.getDate());
+    System.out.printf("조회수: %d\n", board.getViewCount());
   }
+
 }
+
+
+
+
+
+
+
+
+

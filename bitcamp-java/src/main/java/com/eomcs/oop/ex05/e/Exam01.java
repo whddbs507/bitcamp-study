@@ -35,13 +35,3 @@ public class Exam01 {
 // 
 // 서브클래스(sub class) = 자식클래스(child class)
 // => B 클래스처럼 다른 클래스를 상속 받는 클래스를 말한다.
-
-
-
-
-
-
-
-
-
-

@@ -4,16 +4,13 @@ package com.eomcs.oop.ex04;
 public class Exam0111 {
 
   public static void main(String[] args) throws Exception {
-    // 생성자를 호출하여 문자열 인스턴스를 초기화시킨다.
     
-    // => 문자열 리터럴을 사용하여 String 인스턴스를 초기화시키기.
     String s1 = new String("Hello");
-
-    // => char[] 을 사용하여 String 인스턴스 초기화시키기.
+    
     char[] chars = new char[] {'H', 'e', 'l', 'l', 'o'};
+    
     String s2 = new String(chars);
 
-    // => 바이트 배열을 가지고 String 인스턴스 초기화시키기
     byte[] bytes = {
         (byte)0x48, // H 
         (byte)0x65, // e
@@ -22,26 +19,9 @@ public class Exam0111 {
         (byte)0x6f  // o 
     };
     String s3 = new String(bytes);
-
-    System.out.printf("%s, %s, %s\n", s1, s2, s3);
+    int[] s4 = new int[] {3,4,5};
+    System.out.printf("%s, %s, %s, %s, %s\n", s1, s2, s3, s4, chars);
+  
   }
+  
 }
-
-// 생성자의 활용
-// => 인스턴스 변수를 초기화시키기 위해 여러 개의 생성자를 만들어 제공할 수 있다.
-// => 자신에게 맞는 적절한 생성자를 호출하여 인스턴스를 초기화시킨 후 사용하면 된다. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
