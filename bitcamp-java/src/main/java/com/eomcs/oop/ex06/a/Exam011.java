@@ -1,7 +1,7 @@
 // 다형성 - 다형적 변수(polymorphic variables)
 package com.eomcs.oop.ex06.a;
 
-public class Exam01 {
+public class Exam011 {
 
   public static void main(String[] args) {
     Vehicle v = new Vehicle();
@@ -32,11 +32,12 @@ public class Exam01 {
     Car c2 = null;
     //c2 = v; // 컴파일 오류!
     //c2 = b; // 컴파일 오류!
+    c2 = c;
     c2 = s; // OK
     c2 = t; // OK
 
     Sedan s2 = null;
-    //s2 = a; // 컴파일 오류!
+    //s2 = v; // 컴파일 오류!
     //s2 = b; // 컴파일 오류!
     //s2 = c; // 컴파일 오류!
     //s2 = t; // 컴파일 오류!

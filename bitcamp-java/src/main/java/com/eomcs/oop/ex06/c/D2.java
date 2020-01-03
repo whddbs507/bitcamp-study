@@ -13,9 +13,3 @@ public class D2 extends D {
     super.m();
   }
 }
-
-
-
-
-
-

@@ -14,11 +14,4 @@ public class Calculator {
     int v2 = Integer.parseInt(b);
     return v1 + v2;
   }
-
 }
-
-
-
-
-
-

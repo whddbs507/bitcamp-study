@@ -15,8 +15,3 @@ public class X4 extends X3 {
     super.m2(); // X3의 m2()
   }
 }
-
-
-
-
-

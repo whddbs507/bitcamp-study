@@ -22,8 +22,19 @@ public class Exam0310 {
     } else {
       System.out.println("m1 != m2");
     }
-
+    
+    // equals()
+    // => 두 개의 인스턴스가 같은 인스턴스인지 비교한다.
+    // => == 연산자와 동일하게 동작한다.
+    // 이 메서드 또한 Object에 정의된 메서드이기 때문에 자바의 모든 클래스는 이 메서드를 사용할 수 있다.
     System.out.println(m1.equals(m2));
+    // m1과 m2는 다른 인스턴스이기 때문에 결과는 당연히 false이다.
+    System.out.println("-----------------------");
+    String s1 = new String("Hello");
+    String s2 = new String("Hello");
+    
+    System.out.println(s1 == s2);
+    System.out.println(s1.equals(s2));
     // 어! Member 클래스에 equals()를 정의한 적이 없는데 컴파일 오류가 발생하지 않네?
     // => 클래스를 만들 때 수퍼 클래스를 지정하지 않으면,
     //    자동으로 Object를 상속받게 된다.

@@ -1,8 +1,9 @@
 // Object 클래스의 메서드를 오버라이딩 하기 - toString()
 package com.eomcs.oop.ex06.d;
 
-public class Exam0110 {
+public class Exam0110 extends Object {
 
+  // 수퍼 클래스를 지정하지 않으면 기본으로 java.lang.Object 클래스가 수퍼 클래스로 지정된다.
   static class Score {
     String name;
     int kor;
