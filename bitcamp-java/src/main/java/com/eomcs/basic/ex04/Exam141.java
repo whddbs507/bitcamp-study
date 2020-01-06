@@ -2,8 +2,10 @@ package com.eomcs.basic.ex04;
 
 public class Exam141 {
   public static void main(String[] args) {
-
-    // i = 100;  변수 선언을 미리해야 한다!!
+    // 변수는 사용전에 반드시 선언해야 한다.
+    i = 100; // 컴파일 오류!
     int i; 
+    
+
   }
 }

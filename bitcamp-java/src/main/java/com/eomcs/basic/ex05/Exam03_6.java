@@ -13,7 +13,6 @@ public class Exam03_6 {
         // 그리고 계산 결과도 정수이다.
         //r = 10 & 20; // 컴파일 오류!
         int r2 = 10 & 20; // OK!
-        System.out.println(r2);
         //float r3 = 10.2f & 20.3f; // 컴파일 오류!
     }
 }

@@ -1,6 +1,6 @@
 package com.eomcs.basic.ex04;
 
-// 배열
+// 상수
 public class Exam62 {
   public static void main(String[] args) {
     int a;
@@ -12,10 +12,10 @@ public class Exam62 {
     // => final 데이터타입 변수;
     final int b;
     b = 100;
-    // b = 200; // 컴파일 오류!
+    //b = 200; // 컴파일 오류!
     
     final int c = 100;
-    // c = 200; // 컴파일 오류!
-   
+    //c = 200; // 컴파일 오류!
+
   }
 }

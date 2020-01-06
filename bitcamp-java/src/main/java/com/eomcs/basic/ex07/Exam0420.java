@@ -12,7 +12,6 @@ public class Exam0420 {
   public static void main(String[] args) {
     int[] arr;
     arr = getArray();
-    System.out.println(arr);
     System.out.println(arr[1]); // 200
   }
 }

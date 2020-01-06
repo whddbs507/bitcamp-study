@@ -12,6 +12,5 @@ public class Exam07_1 {
         i = 2;
         i *= 5;
         System.out.println(i);
-
     }
 }

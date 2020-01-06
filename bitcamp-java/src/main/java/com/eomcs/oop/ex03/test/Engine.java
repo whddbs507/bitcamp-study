@@ -1,6 +1,7 @@
 package com.eomcs.oop.ex03.test;
 
 public class Engine {
+  
   int sylinder;
   int valve;
   int cc;
@@ -12,8 +13,16 @@ public class Engine {
     this.cc = cc;
     this.oilState = 0;
   }
-
+  
   void cleanOil() {
     this.oilState = 10;
   }
 }
+
+
+
+
+
+
+
+

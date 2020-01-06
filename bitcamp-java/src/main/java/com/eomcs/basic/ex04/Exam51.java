@@ -11,9 +11,9 @@ public class Exam51 {
     System.out.println(b1);
     System.out.println(b2);
 
-    // b1 = 1;   // 컴파일 오류
-    // b2 = 0;   // 컴파일 오류
+    //b1 = 1; // 컴파일 오류!
+    //b2 = 0; // 컴파일 오류!
 
-    // int i = b1;   // 컴파일 오류
+    //int i = b1; // 컴파일 오류!
   }
 }
