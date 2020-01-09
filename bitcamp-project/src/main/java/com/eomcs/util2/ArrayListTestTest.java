@@ -10,16 +10,16 @@ public class ArrayListTestTest {
     XX.add(44);
     XX.add(55);
     XX.print();
-    XX.set(1, "99");
-    XX.set(3, "77");
-    XX.print();
-    System.out.println(XX.size());
-    XX.remove(1);
-    System.out.println(XX.size());
-    XX.print();
     XX.remove(1);
     XX.print();
+    XX.add(66);
+    XX.add(77);
+    XX.add(88);
+    XX.print();
+    print();
+  }
+  
+  static void print(ArrayListPrac<String> ss) {
     
-    System.out.println(XX.size());
   }
 }

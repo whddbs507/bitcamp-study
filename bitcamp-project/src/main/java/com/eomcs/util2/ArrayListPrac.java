@@ -1,8 +1,9 @@
 package com.eomcs.util2;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class ArrayListPrac {
+public class ArrayListPrac<E> {
 
   final int DEFAULT_CAPACITY = 5;
   Object[] elementData;
@@ -17,58 +18,66 @@ public class ArrayListPrac {
     if (initialCapacity < DEFAULT_CAPACITY) {
       this.elementData = new Object[DEFAULT_CAPACITY];
     } else {
-      this.elementData = new Object[initialCapacity];    
+      this.elementData = new Object[initialCapacity];  
     }
   }
-  
-  void add(Object context) {
-    this.elementData[i++] = context;
-    size++;
-    if (this.elementData.length == i) {
+
+  void add(E context) {
+    this.elementData[size++] = context;
+    if (this.elementData.length == size) {
       int oldSize = this.elementData.length;
       int newSize = oldSize + (oldSize >> 1);
       this.elementData = Arrays.copyOf(this.elementData, newSize);
     }
   }
   
-  Object get(int i) {
+
+  @SuppressWarnings("unchecked")
+  E get(int i) {
     if (0 < i && i < elementData.length + 1) {
-      return this.elementData[i];
+      return (E)this.elementData[i];
     } else {
       return null;
     }
   }
-  
-  Object set(int i, Object afterContext) {
+
+  @SuppressWarnings("unchecked")
+  E set(int i, E afterContext) {
     if (0 < i && i < elementData.length) {
       Object oldValue = this.elementData[i];
       this.elementData[i] = afterContext;
-      return oldValue;
+      return (E)oldValue;
     } else {
       return null;
     }
   }
-  
-  Object remove(int i) {
+
+  @SuppressWarnings("unchecked")
+  E remove(int i) {
     if (0 < i && i < elementData.length) {
-      for (int x = i; x < elementData.length - 1; x++) {
-        this.elementData[x] = this.elementData[x+1];
-      }
+      E olds = (E)elementData[i];
+      System.arraycopy(elementData, i + 1, 
+          elementData, i, elementData.length - 2);
     } else {
       return null;
     }
     size--;
-    return elementData[i];
+    return (E)elementData[i];
   }
-  
+
   void print() {
-    for (int j = 0; j < i; j++) {
+    for (int j = 0; j < size; j++) {
       System.out.printf("%s\t",this.elementData[j]);
     }
     System.out.println();
   }
-  
+
   int size() {
     return this.size;
+  }
+  
+  @SuppressWarnings("unchecked")
+  E[] toArray(E[] arr) {
+    return (E[])Arrays.copyOf(elementData, size, arr.getClass());
   }
 }
