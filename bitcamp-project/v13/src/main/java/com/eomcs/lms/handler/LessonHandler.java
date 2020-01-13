@@ -2,32 +2,26 @@ package com.eomcs.lms.handler;
 
 import java.sql.Date;
 import java.util.Scanner;
+import com.eomcs.lms.domain.Lesson;
 
 public class LessonHandler {
-  static class Lesson {
-    int no;
-    String title;
-    String description;
-    Date startDate;
-    Date endDate;
-    int totalHours;
-    int dayHours;
-  }
-
-  // 인스턴스 필드  = 논-스태틱 필드
+  
+  // 인스턴스 필드 = 논-스태틱 필드 
   // => 각 수업 목록을 개별적으로 관리
-  static final int LESSON_SIZE = 100;
   Lesson[] lessons = new Lesson[LESSON_SIZE];
   int lessonCount = 0;
   
-  // 다른 패키지에 있는 클래스에서도 이 변수를 사용하게 하려면 공개해야 한다.
+  // 클래스 필드 = 스태틱 필드
+  // => 공유할 변수
+  static final int LESSON_SIZE = 100;
   public static Scanner keyboard;
-
-  public static void addLesson() {
+  
+  public void addLesson() {
     Lesson lesson = new Lesson();
-
+    
     System.out.print("번호? ");
     lesson.no = keyboard.nextInt();
+
     keyboard.nextLine(); 
 
     System.out.print("수업명? ");
@@ -48,16 +42,17 @@ public class LessonHandler {
     System.out.print("일수업시간? ");
     lesson.dayHours = keyboard.nextInt();
     keyboard.nextLine(); 
-
-    lessons[lessonCount++] = lesson;
+    
+    this.lessons[this.lessonCount++] = lesson;
     System.out.println("저장하였습니다.");
   }
-
-  public static void listLesson() {
-    for (int i = 0; i < lessonCount; i++) {
-      Lesson l = lessons[i];
+  
+  public void listLesson() {
+    for (int i = 0; i < this.lessonCount; i++) {
+      Lesson l = this.lessons[i];
       System.out.printf("%d, %s, %s ~ %s, %d\n",
           l.no, l.title, l.startDate, l.endDate, l.totalHours);
     }
   }
+  
 }

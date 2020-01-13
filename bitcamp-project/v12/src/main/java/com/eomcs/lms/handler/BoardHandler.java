@@ -3,7 +3,6 @@ package com.eomcs.lms.handler;
 import java.sql.Date;
 import java.util.Scanner;
 import com.eomcs.lms.domain.Board;
-import sun.tools.tree.ThisExpression;
 
 public class BoardHandler {
   
@@ -12,20 +11,15 @@ public class BoardHandler {
   static int boardCount = 0;
   public static Scanner keyboard;
   
-  // 인스턴스 메서드
-  // => 인스턴스가 있어야만 호출할 수 있는 메서드이다
-  // => 인스턴스를 사용하는 메서드인 경우 인스턴스 메서드로 선언하라.
-  // => 호출할 때는 반드시 인스턴스 주소를 줘야 한다.
-  //    인스턴스주소.메서드명();
-  public void listBoard() {
-    for (int i = 0; i < this.boardCount; i++) {
-      Board b = this.boards[i];
+  public static void listBoard() {
+    for (int i = 0; i < boardCount; i++) {
+      Board b = boards[i];
       System.out.printf("%d, %s, %s, %d\n", 
           b.no, b.title, b.date, b.viewCount);
     }
   }
 
-  public void addBoard() {
+  public static void addBoard() {
     Board board = new Board();
     
     System.out.print("번호? ");
@@ -38,19 +32,19 @@ public class BoardHandler {
     board.date = new Date(System.currentTimeMillis());
     board.viewCount = 0;
     
-    this.boards[this.boardCount++] = board;
+    boards[boardCount++] = board;
     System.out.println("저장하였습니다.");
   }
   
-  public void detailBoard() {
+  public static void detailBoard() {
     System.out.print("게시물 번호? ");
     int no = keyboard.nextInt();
     keyboard.nextLine(); // 숫자 뒤의 남은 공백 제거
     
     Board board = null;
-    for (int i = 0; i < this.boardCount; i++) {
-      if (this.boards[i].no == no) {
-        board = this.boards[i];
+    for (int i = 0; i < boardCount; i++) {
+      if (boards[i].no == no) {
+        board = boards[i];
         break;
       }
     }

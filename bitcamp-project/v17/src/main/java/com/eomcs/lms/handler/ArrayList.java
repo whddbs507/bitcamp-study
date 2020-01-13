@@ -2,7 +2,7 @@ package com.eomcs.lms.handler;
 
 import java.util.Arrays;
 
-public class ArrayList<클래스이름> {
+public class ArrayList {
   
   static final int DEFAULT_CAPACITY = 3;
   
@@ -24,7 +24,7 @@ public class ArrayList<클래스이름> {
     return Arrays.copyOf(this.list, this.size);
   }
 
-  public void add(클래스이름 obj) {
+  public void add(Object obj) {
     if (this.size == this.list.length) {
       int oldCapacity = this.list.length;
       int newCapacity = oldCapacity + (oldCapacity >> 1);
@@ -33,9 +33,9 @@ public class ArrayList<클래스이름> {
     this.list[this.size++] = obj;
   }
   
-  public 클래스이름 get(int idx) {
+  public Object get(int idx) {
     if (idx >= 0 && idx < this.size) {
-      return (클래스이름)this.list[idx];
+      return this.list[idx];
     } else {
       return null;
     }
