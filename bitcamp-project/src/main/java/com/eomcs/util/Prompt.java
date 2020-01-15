@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.Scanner;
 
 public class Prompt {
-  
   Scanner input;
   
   public Prompt(Scanner input) {

@@ -1,6 +1,10 @@
 package com.eomcs.oop.ex10.a;
 
-public abstract class Exam02 extends A4 {
-    //A4의 추상 메서드를 구현하지 않는다면 
-    //이 클래스는 추상 클래스로 선언해야 한다.
+public class Exam02 extends A4{
+  public static void main(String[] args) {
+    Exam02 tt = new Exam02();
+    tt.m0();
+  }
+  public void m3() {}
+  public void m1() {}
 }

@@ -2,9 +2,9 @@ package com.eomcs.oop.ex09.a;
 
 public class WhiteWorker implements Worker {
   public void execute() {
-    System.out.println("사무직 노동자 일함");
+    System.out.println("WhiteWorker에용");
   }
-  public void sss() {
-    System.out.println("ㄷㄷ");
+  void sss() {
+    System.out.println("sss에용");
   }
 }

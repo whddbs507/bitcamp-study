@@ -3,7 +3,6 @@ package com.eomcs.util;
 import java.lang.reflect.Array;
 
 public class LinkedList<E> {
-  
   Node<E> first;
   
   Node<E> last;
