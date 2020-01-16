@@ -23,5 +23,4 @@ public class Exam01 {
         
         System.out.println(obj.getValue());
     }
-
 }

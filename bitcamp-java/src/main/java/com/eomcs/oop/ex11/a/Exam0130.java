@@ -36,12 +36,4 @@ public class Exam0130 {
         Exam0130 obj = new Exam0130();
         obj.test();
     }
-
 }
-
-
-
-
-
-
-

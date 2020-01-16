@@ -7,7 +7,8 @@ import java.io.File;
 public class Exam0110 {
 
     public static void main(String[] args) throws Exception {
-        File dir = new File(".");
+      // 현재 폴더에 들어있는 하위 폴더 및 파일들의 이름을 출력하라
+      File dir = new File(".");
         
         // 패키지 멤버 클래스의 인스턴스를 생성한다.
         JavaFilter javaFilter = new JavaFilter();
