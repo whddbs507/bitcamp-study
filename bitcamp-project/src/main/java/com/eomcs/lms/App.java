@@ -10,68 +10,86 @@ public class App {
 
     final int SIZE = 100;
     
-    Scanner keyScan = new Scanner(System.in);
+    Scanner keyboard = new Scanner(System.in);
 
     int count = 0;
 
-    LessonHandler lesson = new LessonHandler();
-    BoardHandler board = new BoardHandler();
-
+    LessonHandler lesson = new LessonHandler(keyboard);
+    BoardHandler board = new BoardHandler(keyboard, 200);
+    BoardHandler board2 = new BoardHandler(keyboard, 1000);
+    BoardHandler board3 = new BoardHandler(keyboard);
+    
     for (int j = 0; j < SIZE; j++) {
-      System.out.println("1 - Lesson 입력, 2 - Lesson 출력, 3 - Lesson 상세");
-      System.out.println("4 - Board 입력, 5 - Board 출력, 6 - Board 상세");
-      System.out.println("9 - 나가기");
-      System.out.print("번호를 입력해주세요  >>>  ");
-      int command = keyScan.nextInt();
-
+      System.out.print("명령어를 입력해주세요  >>>  ");
+      String command = keyboard.next();
+      keyboard.nextLine();
+      
       switch(command) {
-        case 1:
+        case "/lesson/add":
         {
           lesson.add();
           count++;
           break;
         }
-        case 2:
+        case "/lesson/list":
         {
-          lesson.print();
+          lesson.list();
           break;
         }
-        case 3:
+        case "/lesson/detail":
         {
           lesson.detail();
           break;
         }
-        case 4:
+        case "/board/add":
         {
           board.add();
           count++;
           break;
         }
-        case 5:
+        case "/board/list":
         {
-          board.print();
+          board.list();
           break;
         }
-        case 6:
+        case "/board/detail":
         {
           board.detail();
           break;
         }
-        case 9:
+        case "/board2/add":
+        {
+          board2.add();
+          count++;
+          break;
+        }
+        case "/board2/list":
+        {
+          board2.list();
+          break;
+        }
+        case "/board2/detail":
+        {
+          board2.detail();
+          break;
+        }
+        case "quit":
         {
           break;
         }
-
+        case "QUIT":
+        {
+          break;
+        }
         default:
         {
-          System.out.print("다시 입력해주세요.");
+          System.out.println("다시 입력해주세요.");
         }
       }
-      if (command == 9) {
+      if (command.equals("quit") || command.equals("QUIT")) {
         System.out.println("종료합니다.");
         break;
       }
     }
-
   }
 }

@@ -8,24 +8,40 @@ public class BoardHandler {
   
   public final int SIZE = 100;
   int view = 0;
-  Scanner keyScan = new Scanner(System.in);
   
   int boardCount = 0;
-  Board[] boards = new Board[SIZE];
+  Board[] boards;
+  Scanner input;
+  int capacity;
+  
+  public BoardHandler(Scanner input) {
+    this.input = input;
+    boards = new Board[SIZE];
+  }
+  
+  public BoardHandler(Scanner input, int capacity) {
+    this.input = input;
+    this.capacity = capacity;
+    if (capacity < SIZE) {
+      boards = new Board[SIZE];
+    } else if (capacity >= SIZE) {
+      boards = new Board[capacity];
+    }
+  }
   
   public void add() {
     Board board = new Board();
     System.out.print("번호 : ");
-    board.no = keyScan.nextInt();
-    keyScan.nextLine();
+    board.no = input.nextInt();
+    input.nextLine();
     System.out.print("내용 : ");
-    board.description = keyScan.nextLine();
+    board.description = input.nextLine();
     boards[boardCount] = board;
 
     boardCount++;
   }
   
-  public void print() {
+  public void list() {
     for (int i = 0; i < boardCount; i++) {
       Board board = boards[i];
       System.out.printf("%d %s %d\n", board.no, board.description, view);
@@ -34,8 +50,8 @@ public class BoardHandler {
   
   public void detail() {
     System.out.print("Board의 번호를 입력하세요>>   ");
-    int i = keyScan.nextInt();
-    keyScan.nextLine();
+    int i = input.nextInt();
+    input.nextLine();
     for (int j = 0; j < boardCount; j++) {
       Board board = boards[j];
       if (i == board.no) {
