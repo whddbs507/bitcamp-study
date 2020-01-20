@@ -5,9 +5,10 @@ import java.io.FilenameFilter;
 
 public class JavaFilter implements FilenameFilter {
   public boolean accept(File dir, String name) {
-    if (name.endsWith(".java")) {
+    if (name.endsWith("gradle")) {
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 }
