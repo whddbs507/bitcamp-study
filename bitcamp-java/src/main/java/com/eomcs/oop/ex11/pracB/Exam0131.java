@@ -4,27 +4,28 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 public class Exam0131 {
+  static int a;
+  int b;
 
-  // non-static nested class = inner class
   class JavaFilter implements FilenameFilter {
     public boolean accept(File dir, String name) {
-      if (name.endsWith("gradle")) {
+      if (name.endsWith(".gradle"))
         return true;
-      } else {
-        return false;
-      }
+      return false;
     }
   }
 
   public static void main(String[] args) {
-    File file = new File(".");
-    Exam0131 abc = new Exam0131();
+    a = 100;
+    // b = 100;
+    Exam0131 ee = new Exam0131();
+    JavaFilter javaFilter = ee.new JavaFilter();
     
-    JavaFilter javaFilter = abc.new JavaFilter();
-    String[] names = file.list(javaFilter);
     
+    File dir = new File(".");
+    String[] names = dir.list(javaFilter);
     for ( String name : names ) {
       System.out.println(name);
-    } 
+    }
   }
 }

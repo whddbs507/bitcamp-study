@@ -13,6 +13,7 @@ public class Exam0120 {
         return false;
       }
     }
+    static void m1() {}
   }
   
   public static void main(String[] args) {
