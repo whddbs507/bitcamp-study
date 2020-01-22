@@ -7,10 +7,12 @@ import java.io.FilenameFilter;
 // non-static nested class
 // local class
 // anonymous class
+// anonymous class II
 // lambda
 public class Exam0160 {
 
   public static void main(String[] args) {
+    
     File dir = new File(".");
     
     String[] names = dir.list((d, n) -> {
