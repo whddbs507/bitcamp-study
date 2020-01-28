@@ -8,7 +8,7 @@ public class Exam0110 {
     p.price = 2000000;
     
     Product p2 = new Product();
-    p.category = "computer";
+    p2.category = "computer";
     p2.name = "삼성모듈램 4GB";
     p2.price = 80000;
     
