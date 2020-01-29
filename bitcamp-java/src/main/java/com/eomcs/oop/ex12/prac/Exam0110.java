@@ -1,13 +1,31 @@
 package com.eomcs.oop.ex12.prac;
 
 public class Exam0110 {
-  static interface Interest {
-    
+  
+  static interface Calculator {
+    int compute(int a, int b);
   }
   
+  static class MyCalculator {
+    public static int plus(int a, int b) {
+      return a + b;
+    }
+
+    public static int minus(int a, int b) {
+      return a - b;
+    }
+
+    public static int multiple(int a, int b) {
+      return a * b;
+    }
+
+    public static int divide(int a, int b) {
+      return a / b;
+    }
+  }
   
   public static void main(String[] args) {
-    Interest i1 = getInterest(1);
-    System.out.println("금액 : %.2f\n", i1.compute(1_0000_0000));
+    Calculator c1 = MyCalculator::plus;
+    System.out.println(c1.compute(2, 3));
   }
 }
