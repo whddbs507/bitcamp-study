@@ -11,7 +11,7 @@ public class Calculator {
     if (operator == "/")
       return a / b;
     else {
-      return -1;
+      throw RuntimeException("해당 연산자 지원 안해");
     }
   } 
 }
