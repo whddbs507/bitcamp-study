@@ -1,6 +1,7 @@
 package com.eomcs.exception.ex05.prac;
 
 import java.sql.Date;
+import javax.management.RuntimeErrorException;
 
 public class Board {
   int num;
@@ -39,5 +40,4 @@ public class Board {
   Date getDate() {
     return this.date;
   }
-  
 }
