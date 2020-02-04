@@ -13,6 +13,9 @@ public class Exam6 {
   }
   
   static void printList(File dir) {
-    
+    File[] files = dir.listFiles();
+    for (File file : files) {
+      System.out.println(file.getName());
+    }
   }
 }
