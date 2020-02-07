@@ -23,7 +23,7 @@ public class Server {
     System.out.printf("Client: %s\n", message);
     System.out.println("상대편이 보낸 메시지를 수신하였음!");
     
-    out.println("그래요!!!!!");
+    out.println("서버에요..");
     
     in.close();
     out.close();

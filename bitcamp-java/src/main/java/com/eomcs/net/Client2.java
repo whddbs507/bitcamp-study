@@ -29,20 +29,19 @@ public class Client2 {
       PrintStream out = new PrintStream(socket.getOutputStream());
       Scanner in = new Scanner(socket.getInputStream());
       
-      System.out.print("서버에 보낼거 입력 : ");
-      String sendMsg = keyScan.nextLine();
-      out.println(sendMsg);
-      
-      String message = in.nextLine();
-      System.out.println(message);
-      
-      in.close();
-      out.close();
+      while(true) {
+        System.out.print("클라이언트 >> ");
+        String sendMsg = keyScan.nextLine();
+        out.println(sendMsg);
+        
+        String message = in.nextLine();
+        System.out.printf("서버 : %s\n", message);
+      }
+    
     } catch(Exception e) {
       System.out.println("예외 발생");
       e.printStackTrace();
       return;
     }
-    keyScan.close();
   }
 }

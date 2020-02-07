@@ -1,6 +1,8 @@
 package com.eomcs.algorithm.data_structure.array;
 
-public class ArrayList {
+import java.util.Arrays;
+
+public class ArrayList<E> {
   
   final int DEFAULT_CAPACITY = 2;
   int capacity;
@@ -19,28 +21,52 @@ public class ArrayList {
     }
   }
   
-  void add(Object Content) {
+  void add(E Content) {
     if (size == elementData.length)
     {
       int oldCapacity = elementData.length;
       int newCapacity = elementData.length * 3/2;
-      elementData = new Object[newCapacity];
+      this.elementData = Arrays.copyOf(elementData, newCapacity);
     }
     elementData[size++] = Content;
   }
   
-  Object get(int no) {
-    return elementData[no];
-  }
-  
-  void set(int no, Object obj) {
-    elementData[no] = obj;
-  }
-  
-  void remove(int no) {
-    for (int i = no + 1; i <= this.size; i++) {
-      this.elementData[i-1] = this.elementData[i];
+  E get(int no) {
+    if (0 <= no && no < size) {
+      return elementData[no];
+    } else {
+      return null;
     }
-    this.size--;
+  }
+  
+  E set(int no, E obj) {
+    if (0 <= no && no < size) {
+      Object origin = obj;
+      elementData[no] = obj;
+      return origin;
+    } else {
+      return null;
+    }
+  }
+  
+  E remove(int no) {
+    E origin = (E) elementData[no];
+    if (0 <= no && no < size) {
+      System.arraycopy(this.elementData, no + 1, this.elementData, 
+      no, this.size - (no + 1));
+      this.elementData[this.size - 1] = null;
+      this.size--;
+      return origin;
+    } else {
+      return null;
+    }
+  }
+  
+  int size() {
+    return this.size;
+  }
+  
+  E[] toArray() {
+    return (E[]) Arrays.copyOf(elementData, this.size);
   }
 }
