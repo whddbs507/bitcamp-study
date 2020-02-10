@@ -2,6 +2,7 @@ package com.eomcs.net;
 
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class Client4 {
     out.writeUTF(file.getName());
     
     int b;
-    for (b = file.) {
+    for (b = fi) {
       
     }
     
