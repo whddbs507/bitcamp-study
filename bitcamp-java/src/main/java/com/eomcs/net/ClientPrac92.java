@@ -4,7 +4,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientPrac9 {
+public class ClientPrac92 {
   public static void main(String[] args) throws Exception {
     Scanner keyScan = new Scanner(System.in);
 

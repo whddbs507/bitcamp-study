@@ -4,32 +4,26 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientPrac9 {
+public class ClientPrac142 {
   public static void main(String[] args) throws Exception {
     Scanner keyScan = new Scanner(System.in);
-
-    Socket socket = new Socket("localhost", 7777);
+    Socket socket = new Socket("localhost", 33322);
     
     DataOutputStream out = new DataOutputStream(socket.getOutputStream());
     Scanner in = new Scanner(socket.getInputStream());
-
+    
     while (true) {
-      System.out.print("연산자? ");
-      out.writeUTF(keyScan.nextLine());
-
-      System.out.print("값1? ");
-      out.writeInt(Integer.parseInt(keyScan.nextLine()));
-
+      System.out.print("연산자 >> ");
+      String op = keyScan.nextLine();
+      out.writeUTF(op);
+      
+      System.out.print("숫자 >> ");
+      int num = keyScan.nextInt();
+      keyScan.nextLine();
+      out.writeInt(num);
+      
       String str = in.nextLine();
       System.out.println(str);
-
-      if (str.equals("quit"))
-        break;
     }
-
-    in.close();
-    out.close();
-    socket.close();
-    keyScan.close();
   }
 }
