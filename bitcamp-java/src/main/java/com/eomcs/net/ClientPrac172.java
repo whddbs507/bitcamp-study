@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientPrac17 {
+public class ClientPrac172 {
   public static void main(String[] args) throws Exception {
     long clientID = 0;
     Scanner keyScan = new Scanner(System.in);
